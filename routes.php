@@ -23,6 +23,20 @@ $routes = array(
 
     'GET /installation' => function($f3, $params) {
         renderMarkdown(__DIR__ . '/view/installation.md');
+    },
+
+    'GET /download' => function($f3, $params) {
+        renderMarkdown(__DIR__ . '/view/download.md');
+    },
+
+    'GET /contribute' => function($f3, $params) {
+        renderMarkdown(__DIR__ . '/view/contribute.md');
+    },
+
+    // this method should be called from a Git WebHook whenever master is updated.
+    // @TODO - add security
+    'GET /update-zip' => function($f3, $params) {
+        require shell_exec(__DIR__ . '/website-update.sh');
     }
 );
 

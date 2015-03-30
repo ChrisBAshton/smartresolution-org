@@ -1,0 +1,15 @@
+{
+    "name": "ChrisBAshton/smartresolution-website",
+    "description": "SmartResolution website",
+    "homepage": "http://smartresolution.org",
+    "require": {
+        "php":             ">=5.3.6",
+        "bcosca/fatfree":  "3.4.0"
+    },
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "2.*"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    }
+}

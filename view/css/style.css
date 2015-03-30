@@ -1,0 +1,155 @@
+/************************************************************ Default settings */
+
+html, body {
+    margin:  0;
+    padding: 0;
+    height:  100%;
+    -webkit-font-smoothing: antialiased !important;
+    font-size: 16px;
+}
+
+p {
+    padding: 12px;
+}
+
+footer {
+    height: 45px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #3D3D3D;
+    color: white;
+}
+
+footer a {
+    color: rgb(134, 196, 234);
+}
+
+footer a:hover {
+    color: rgb(193, 226, 247);
+}
+
+/************************************************************ Bootstrap overrides */
+
+.bg-padded {
+	padding: 15px;
+}
+
+.bg-primary a {
+    color: white;
+}
+
+.form-control {
+    margin: 18px 0;
+}
+
+.datetime_picker .form-control {
+    margin: 0;
+}
+
+.row {
+    margin-top: 15px;
+}
+
+/************************************************************ Custom classes */
+
+/*
+  Wrapper and content elements are to keep footer fixed to bottom of page. See:
+
+  http://matthewjamestaylor.com/blog/keeping-footers-at-the-bottom-of-the-page
+*/
+#wrapper {
+    min-height:100%;
+    position:relative;
+}
+
+#content {
+   padding-bottom: 60px; /* >= height of the footer */
+}
+
+.container {
+    position: relative;
+}
+
+.notification_link img {
+    width: 20px;
+}
+
+.logo {
+    max-width: 230px;
+    padding: 12px 0;
+}
+
+.return_to_dispute {
+    display: inline-block;
+    margin: 15px auto 20px;
+}
+
+.message {
+    border: 1px solid grey;
+    margin: 1em 0;
+    width: 80%;
+}
+
+.message--current_author {
+  float: right;
+}
+
+.message__body {
+
+}
+
+.message__author {
+    text-align: right;
+    background-color: #EDEDED;
+    padding: 0.5em;
+}
+
+.list__item {
+  padding: 0.5em 0;
+}
+
+.list__item:nth-child(even) {
+  background-color: #EDEDED;
+}
+
+.dispute__option {
+    text-align: center;
+}
+
+.dispute__option__image {
+    width: auto;
+    display: block;
+    max-height: 75px;
+    margin: 5px auto 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.dispute__option:hover .dispute__option__image {
+    opacity: 1;
+}
+
+.dispute__option__title {
+  font-size: 1.35em;
+}
+
+.stats {
+    display: none;
+}
+
+/* @TODO - put environment in body class */
+.env--test .stats {
+    display: block;
+}
+
+@media only screen and (min-width: 1000px) {
+    .lifespan_status {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        z-index: 9;
+    }
+}

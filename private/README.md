@@ -46,15 +46,15 @@ You should now be able to run the one-script install:
 
 When the script has finished, it automatically starts the server. You should be able to go to the provided IP address and see SmartResolution working.
 
+### Updating the SmartResolution.org website
+
+@TODO! Essentially, just copy what we've done above. But would be nice if there was a script to do this for us, and we could trigger it with a Git Webhook.
+
 ### Updating the project
 
 WARNING: these instructions will *replace* the production database, so you should always back up your database first if you're doing this on a live site.
 
 `sudo /var/www/html/private/website-update.sh`
-
-### Updating the SmartResolution.org website
-
-@TODO!
 
 ## Just in case
 

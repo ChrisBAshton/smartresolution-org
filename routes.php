@@ -33,10 +33,6 @@ $routes = array(
         renderMarkdown(__DIR__ . '/view/download.md');
     },
 
-    'GET /contribute' => function($f3, $params) {
-        renderMarkdown(__DIR__ . '/view/contribute.md');
-    },
-
     // this method should be called from a Git WebHook whenever master is updated.
     // @TODO - add security
     'GET /update-zip' => function($f3, $params) {

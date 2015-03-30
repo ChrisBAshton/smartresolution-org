@@ -49,7 +49,7 @@ Run the Cucumber tests:
 
 `cucumber features`
 
-...or just leave it to [Travis](https://travis-ci.org/ChrisBAshton/major-project.svg?branch=master)!
+...or just leave it to [Travis](https://travis-ci.org/ChrisBAshton/smartresolution.svg?branch=master)!
 
 ## Architecture
 

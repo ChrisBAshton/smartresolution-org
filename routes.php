@@ -25,6 +25,10 @@ $routes = array(
         renderMarkdown(__DIR__ . '/view/installation.md');
     },
 
+    'GET  /aws' => function ($f3, $params) {
+        renderMarkdown(__DIR__ . '/view/aws.md');
+    },
+
     'GET /download' => function($f3, $params) {
         renderMarkdown(__DIR__ . '/view/download.md');
     },

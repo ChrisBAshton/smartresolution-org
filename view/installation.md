@@ -1,3 +1,5 @@
+If you're deploying SmartResolution to an AWS EC2 instance, I've written an [AWS install script and a detailed set of instructions](/aws). Otherwise, read on.
+
 ## Pre-requisites
 
 * PHP (version >= 5.4)
@@ -6,7 +8,7 @@
 
 ## Installation
 
-Note: all of the commands in the rest of this README are relative to the root of the repository. Therefore, when you've downloaded the repo, make sure you `cd major-project` to go into the top level of the repository before running any of the following commands.
+Note: all of the commands in the rest of this README are relative to the root of the repository. Therefore, when you've downloaded the repo, make sure you `cd smartresolution` to go into the top level of the repository before running any of the following commands.
 
 I've made a handy one-line installer script which installs all dependencies and creates and populates the database. You should run that script OR the manual installation - not both.
 
@@ -35,20 +37,18 @@ git submodule update --remote
 
 In future, when more modules have been developed, we'd move this behaviour to a dedicated administrator dashboard, rather than using Git submodules. Watch this space.
 
-## Steps to run on each terminal instance
-
-You need to export the Composer packages to your PATH:
-
-`export PATH=./vendor/bin:$PATH`
-
-Unfortunately, this needs to be done every time you start a new terminal session. For a more permanent solution, you'd need to edit your `~/.bash_profile` and add a line specific to where your project lives, e.g:
-
-`export PATH=/Users/ashton/Dropbox/uni_major_project/_codebase/vendor/bin:$PATH`
-
-Running either of these steps allows you to run tests, generate documentation, etc, as if those packages were installed globally.
-
 ## Seeing is believing
 
-* run `./deploy/server.sh` to start the server
+* run `php -S 127.0.0.1:8000 -t webapp` to start the server
 * go to http://127.0.0.1:8000/ in your browser
-* you should now be able to register an account and log in using the forms provided
+* you should now see SmartResolution
+
+## Deploying to your server
+
+Because of the directory structure of the software, by default you'd need to direct visitors to /webapp, i.e. `http://example.com/webapp`
+
+Most of the time, you'll want this to be accessible at the root, i.e. `http://example.com`. To do this, you can edit your server's httpd.conf, or edit your .htaccess file, with this line:
+
+```
+DocumentRoot "/path/to/smartresolution/webapp"
+```

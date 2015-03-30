@@ -25,10 +25,6 @@ $routes = array(
         renderMarkdown(__DIR__ . '/view/installation.md');
     },
 
-    'GET  /aws' => function ($f3, $params) {
-        renderMarkdown(__DIR__ . '/view/aws.md');
-    },
-
     'GET /download' => function($f3, $params) {
         renderMarkdown(__DIR__ . '/view/download.md');
     },
@@ -36,7 +32,7 @@ $routes = array(
     // this method should be called from a Git WebHook whenever master is updated.
     // @TODO - add security
     'GET /update-zip' => function($f3, $params) {
-        require shell_exec(__DIR__ . '/website-update.sh');
+        require shell_exec(__DIR__ . '/private/website-update.sh');
     }
 );
 

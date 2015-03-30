@@ -1,6 +1,8 @@
 # Amazon Web Services
 This readme provides instructions on how to deploy SmartResolution to AWS.
 
+Again, this is intended for private use. It is tailored specifically to installing SmartResolution to demo.smartresolution.org.
+
 ## Create your AWS instance
 
 * create an AWS account
@@ -19,8 +21,6 @@ You should now SSH into your instance if you haven't already:
 `ssh -i path/to/key.pem ec2-user@your_ec2_private_dns.amazonaws.com`
 
 ### Install the project
-
-These instructions should work for both new instances and updating existing instances to the latest version of the project. WARNING: these instructions will *replace* the production database, so you should always back up your database first if you're doing this on a live site.
 
 Copy and paste the following commands into your shell:
 
@@ -45,6 +45,12 @@ You should now be able to run the one-script install:
 `sudo ./deploy/aws.sh`
 
 When the script has finished, it automatically starts the server. You should be able to go to the provided IP address and see SmartResolution working.
+
+### Updating the project
+
+WARNING: these instructions will *replace* the production database, so you should always back up your database first if you're doing this on a live site.
+
+`sudo /var/www/html/private/aws.sh`
 
 ## Just in case
 

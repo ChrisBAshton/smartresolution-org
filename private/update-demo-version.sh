@@ -17,8 +17,8 @@ cd html-demo
 function fix_permissions {
     sudo chown -R root:www /var/www
     sudo chmod 2775 /var/www
-    find /var/www -type d -exec sudo chmod 2775 {} +
-    find /var/www -type f -exec sudo chmod 0664 {} +
+    find /var/www -type d -print0 | sudo xargs -0 chmod 2775
+    find /var/www -type f -print0 | sudo xargs -0 chmod 0664
 }
 
 cd /var/www/html-demo

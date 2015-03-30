@@ -31,10 +31,10 @@ cd /var/www
 sudo rm -rf html
 
 # get latest version of SmartResolution
-wget https://github.com/ChrisBAshton/smartresolution/archive/master.zip
+wget https://github.com/ChrisBAshton/smartresolution-org/archive/master.zip
 unzip master.zip
 rm master.zip
-mv smartresolution-master/ html
+mv smartresolution-org-master html
 
 # move into the repo, ready to run some scripts
 cd html
@@ -42,7 +42,7 @@ cd html
 
 You should now be able to run the one-script install:
 
-`sudo ./deploy/aws.sh`
+`sudo ./private/website-update.sh`
 
 When the script has finished, it automatically starts the server. You should be able to go to the provided IP address and see SmartResolution working.
 
@@ -50,7 +50,11 @@ When the script has finished, it automatically starts the server. You should be 
 
 WARNING: these instructions will *replace* the production database, so you should always back up your database first if you're doing this on a live site.
 
-`sudo /var/www/html/private/aws.sh`
+`sudo /var/www/html/private/website-update.sh`
+
+### Updating the SmartResolution.org website
+
+@TODO!
 
 ## Just in case
 

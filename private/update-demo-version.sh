@@ -27,10 +27,6 @@ cd /var/www/html-demo
 sudo yum remove httpd* php* -y
 sudo yum install httpd24 php54 php54-pdo php54-mysqlnd -y
 
-# install our custom httpd.conf
-sudo rm /etc/httpd/conf/httpd.conf
-sudo mv deploy/httpd.conf /etc/httpd/conf/httpd.conf
-
 fix_permissions
 
 ## install composer

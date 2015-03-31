@@ -10,7 +10,8 @@ function renderMarkdown($markdownFile) {
 $routes = array(
 
     'GET  /' => function ($f3, $params) {
-        renderMarkdown(__DIR__ . '/view/index.md');
+        $f3->set('content', 'index.html');
+        echo View::instance()->render('layout.html');
     },
 
     'GET /about' => function($f3, $params) {
@@ -27,6 +28,10 @@ $routes = array(
 
     'GET /download' => function($f3, $params) {
         renderMarkdown(__DIR__ . '/view/download.md');
+    },
+
+    'GET /marketplace' => function($f3, $params) {
+        renderMarkdown(__DIR__ . '/view/marketplace.md');
     },
 
     // this method should be called from a Git WebHook whenever master is updated.

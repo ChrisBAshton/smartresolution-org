@@ -37,7 +37,7 @@ $routes = array(
     // this method should be called from a Git WebHook whenever master is updated.
     // @TODO - add security
     'GET /update-zip' => function($f3, $params) {
-        require shell_exec(__DIR__ . '/private/website-update.sh');
+        echo shell_exec(__DIR__ . '/private/update-website.sh');
     }
 );
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /var/www/html
+
 # remove repo if it already exists
 rm -rf smartresolution
 # also remove current zip
@@ -16,11 +18,12 @@ rm -rf ./docs/
 
 # install project dependencies
 cd smartresolution
+curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 export PATH=./vendor/bin:$PATH
 
 #################################################### DOCS
-phpdoc -d ./webapp/ -t ../docs/
+phpdoc -d ./webapp/ -t /var/www/html/docs/
 
 
 
@@ -28,6 +31,7 @@ phpdoc -d ./webapp/ -t ../docs/
 rm -rf features
 rm -rf modules
 rm -rf test
+rm -rf vendor # we needed this just now for the phpdoc stuff, but this amounts to MB of stuff!
 
 # likewise, delete any files we don't need
 rm README.md
@@ -38,9 +42,10 @@ rm composer.lock
 # initialise empty database
 sqlite3 data/production.db < data/db.sql
 
-cd -
+cd /var/www/html/
 
 # zip, then remove tmp directory
 #################################################### ZIP
+mkdir downloads
 zip -r ./downloads/smartresolution.zip smartresolution/
 rm -rf smartresolution

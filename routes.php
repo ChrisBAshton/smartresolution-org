@@ -35,9 +35,8 @@ $routes = array(
     },
 
     // this method should be called from a Git WebHook whenever master is updated.
-    // @TODO - add security
     'GET /update-website' => function($f3, $params) {
-        echo shell_exec(__DIR__ . '/private/update-website.sh');
+        echo "Coming soon";
     }
 );
 

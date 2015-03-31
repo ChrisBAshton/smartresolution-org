@@ -48,5 +48,4 @@ sudo chown -R ec2-user /var/www/html-demo/data/
 chmod 777 data
 chmod 777 data/production.db
 
-sudo service httpd stop
 sudo service httpd start

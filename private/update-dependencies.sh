@@ -10,8 +10,7 @@ php composer.phar install
 # make dependencies bin available
 export PATH=./vendor/bin:$PATH
 
-sudo -i
-sudo echo '
+echo '
 # VIRTUALHOST CONFIGURATION
 
 NameVirtualHost *:80
@@ -53,8 +52,7 @@ NameVirtualHost *:80
     Require all granted
 </Directory>
 
-' > /etc/httpd/conf.d/subdomains.conf
-exit # exit the root session
+' | sudo tee /etc/httpd/conf.d/subdomains.conf
 
 sudo service httpd restart
 

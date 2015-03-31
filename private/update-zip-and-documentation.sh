@@ -13,9 +13,16 @@ mv smartresolution-master/ smartresolution/
 
 # Update API documentation
 rm -rf ./docs/
-phpdoc -d ./smartresolution/webapp/ -t ./docs/
 
+# install project dependencies
 cd smartresolution
+php composer.phar install
+export PATH=./vendor/bin:$PATH
+
+#################################################### DOCS
+phpdoc -d ./webapp/ -t ../docs/
+
+
 
 # delete any directories we don't need
 rm -rf features
@@ -34,5 +41,6 @@ sqlite3 data/production.db < data/db.sql
 cd -
 
 # zip, then remove tmp directory
+#################################################### ZIP
 zip -r ./downloads/smartresolution.zip smartresolution/
 rm -rf smartresolution

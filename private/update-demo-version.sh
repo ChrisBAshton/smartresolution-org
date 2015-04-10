@@ -15,12 +15,12 @@ mv smartresolution-master/ html-demo
 cd html-demo
 
 function fix_permissions {
-    sudo chown -R root:www /var/www
-    sudo chmod 2775 /var/www
-    find /var/www -type d -print0      | sudo xargs -0 chmod 2775
-    find /var/www -type f -print0      | sudo xargs -0 chmod 0664
-    # but we want smartresolution-org scripts to be executable
-    find /var/www -name "*.sh" -print0 | sudo xargs -0 chmod u+x
+    # sudo chown -R root:www /var/www
+    # sudo chmod 2775 /var/www
+    # find /var/www -type d -print0      | sudo xargs -0 chmod 2775
+    # find /var/www -type f -print0      | sudo xargs -0 chmod 0664
+    # # but we want smartresolution-org scripts to be executable
+    # find /var/www -name "*.sh" -print0 | sudo xargs -0 chmod u+x
 }
 
 cd /home/ec2-user/html-demo

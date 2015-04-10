@@ -61,6 +61,4 @@ NameVirtualHost *:80
 
 ' | sudo tee /etc/httpd/conf.d/subdomains.conf
 
-sudo service httpd restart
-
 cd -

@@ -1,5 +1,15 @@
 #!/bin/bash
 
+function fix_permissions {
+    ls
+    # sudo chown -R root:www /var/www
+    # sudo chmod 2775 /var/www
+    # find /var/www -type d -print0      | sudo xargs -0 chmod 2775
+    # find /var/www -type f -print0      | sudo xargs -0 chmod 0664
+    # # but we want smartresolution-org scripts to be executable
+    # find /var/www -name "*.sh" -print0 | sudo xargs -0 chmod u+x
+}
+
 cd /home/ec2-user
 
 # remove old version of SmartResolution if we've done this before
@@ -13,18 +23,6 @@ mv smartresolution-master/ html-demo
 
 # move into the repo, ready to run some scripts
 cd html-demo
-
-function fix_permissions {
-    ls
-    # sudo chown -R root:www /var/www
-    # sudo chmod 2775 /var/www
-    # find /var/www -type d -print0      | sudo xargs -0 chmod 2775
-    # find /var/www -type f -print0      | sudo xargs -0 chmod 0664
-    # # but we want smartresolution-org scripts to be executable
-    # find /var/www -name "*.sh" -print0 | sudo xargs -0 chmod u+x
-}
-
-cd /home/ec2-user/html-demo
 
 # remove AWS' default php 5.3, install php 5.4
 sudo yum remove httpd* php* -y
@@ -50,5 +48,3 @@ fix_permissions # ...again
 sudo chown -R ec2-user /home/ec2-user/html-demo/data/
 chmod 777 data
 chmod 777 data/production.db
-
-sudo service httpd start

@@ -24,19 +24,6 @@ You can also run `php deploy/install.php --refresh` at any time to clean and re-
 * create production database: `sqlite3 data/production.db < data/db.sql`
 * at this stage you can tweak `data/fixtures/seed.php` to populate the production database, or you can leave the database blank and fill in manually later.
 
-### Maritime Collision Module
-
-SmartResolution is an abstract ODR platform that takes "modules" of functionality. As an example, we've included a Maritime Collision module, which is [in its own repo](https://github.com/ChrisBAshton/smartresolution-module-maritime-collision), underlining the principle that the two components are kept entirely separate.
-
-If you wish to have the maritime collision module on your installation, you'll need to run these additional commands. See [GitHub's explanation of submodules](http://git-scm.com/book/en/v2/Git-Tools-Submodules) to understand why.
-
-```
-git submodule init
-git submodule update --remote
-```
-
-In future, when more modules have been developed, we'd move this behaviour to a dedicated administrator dashboard, rather than using Git submodules. Watch this space.
-
 ## Seeing is believing
 
 * run `php -S 127.0.0.1:8000 -t webapp` to start the server

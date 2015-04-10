@@ -14,20 +14,13 @@ rm master.zip
 mv smartresolution-master/ smartresolution/
 
 # Update API documentation
-rm -rf ./docs/
-
-# install project dependencies
-cd smartresolution
-curl -sS https://getcomposer.org/installer | php
-php composer.phar install
-export PATH=./vendor/bin:$PATH
+rm -rf /var/www/html/docs/
 
 #################################################### DOCS
-phpdoc -d ./webapp/ -t /var/www/html/docs/
-
-
+phpdoc -d ./smartresolution/webapp/ -t /var/www/html/docs/
 
 # delete any directories we don't need
+cd smartresolution
 rm -rf features
 rm -rf modules
 rm -rf test

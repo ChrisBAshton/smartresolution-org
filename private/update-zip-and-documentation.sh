@@ -17,10 +17,14 @@ mv smartresolution-master/ smartresolution/
 rm -rf /home/ec2-user/html/docs/
 
 #################################################### DOCS
-export PATH=./vendor/bin:$PATH
-sudo chmod 700 ./vendor/bin/phpdoc
+
+curl -sS https://getcomposer.org/installer | php
+php composer.phar install
+
+export PATH=/home/ec2-user/html/vendor/bin:$PATH
+sudo chmod 700 /home/ec2-user/html/vendor/bin/phpdoc
 sudo chown -R ec2-user /tmp
-phpdoc -d ./smartresolution/webapp/ -t /home/ec2-user/html/docs/
+phpdoc -d /home/ec2-user/html/smartresolution/webapp/ -t /home/ec2-user/html/docs/
 
 # delete any directories we don't need
 cd smartresolution

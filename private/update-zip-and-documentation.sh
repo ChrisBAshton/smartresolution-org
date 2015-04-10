@@ -18,6 +18,8 @@ rm -rf /home/ec2-user/html/docs/
 
 #################################################### DOCS
 export PATH=./vendor/bin:$PATH
+sudo chmod 700 ./vendor/bin/phpdoc
+sudo chown -R ec2-user /tmp
 phpdoc -d ./smartresolution/webapp/ -t /home/ec2-user/html/docs/
 
 # delete any directories we don't need

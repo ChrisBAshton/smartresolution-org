@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # delete smartresolution.org
+cd /var/www
+sudo rm -f html
+sudo rm -f html-demo
+
 cd /home/ec2-user
 sudo rm -rf html
 
@@ -11,3 +15,6 @@ rm master.zip
 mv smartresolution-org-master/ html
 
 ./html/private/update-everything-else.sh
+
+sudo ln -s /home/ec2-user/html      /var/www/html
+sudo ln -s /home/ec2-user/html-demo /var/www/html-demo

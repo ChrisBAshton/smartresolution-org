@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /var/www/html
+cd /home/ec2-user/html
 
 # remove repo if it already exists
 rm -rf smartresolution
@@ -14,10 +14,11 @@ rm master.zip
 mv smartresolution-master/ smartresolution/
 
 # Update API documentation
-rm -rf /var/www/html/docs/
+rm -rf /home/ec2-user/html/docs/
 
 #################################################### DOCS
-phpdoc -d ./smartresolution/webapp/ -t /var/www/html/docs/
+export PATH=./vendor/bin:$PATH
+phpdoc -d ./smartresolution/webapp/ -t /home/ec2-user/html/docs/
 
 # delete any directories we don't need
 cd smartresolution
@@ -35,7 +36,7 @@ rm composer.lock
 # initialise empty database
 sqlite3 data/production.db < data/db.sql
 
-cd /var/www/html/
+cd /home/ec2-user/html/
 
 # zip, then remove tmp directory
 #################################################### ZIP

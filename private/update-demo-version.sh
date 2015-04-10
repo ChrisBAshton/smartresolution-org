@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /var/www
+cd /home/ec2-user
 
 # remove old version of SmartResolution if we've done this before
 sudo rm -rf html-demo
@@ -23,7 +23,7 @@ function fix_permissions {
     find /var/www -name "*.sh" -print0 | sudo xargs -0 chmod u+x
 }
 
-cd /var/www/html-demo
+cd /home/ec2-user/html-demo
 
 # remove AWS' default php 5.3, install php 5.4
 sudo yum remove httpd* php* -y
@@ -46,7 +46,7 @@ sudo php deploy/install.php
 fix_permissions # ...again
 
 # also need to give our database permissions (@TODO - 777 is probably a bad idea)
-sudo chown -R ec2-user /var/www/html-demo/data/
+sudo chown -R ec2-user /home/ec2-user/html-demo/data/
 chmod 777 data
 chmod 777 data/production.db
 

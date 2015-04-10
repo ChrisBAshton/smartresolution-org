@@ -1,5 +1,5 @@
 
-cd /var/www/html
+cd /home/ec2-user/html
 
 ## install composer
 curl -sS https://getcomposer.org/installer | php
@@ -36,6 +36,7 @@ NameVirtualHost *:80
 </VirtualHost>
 
 <Directory "/var/www">
+    Options Indexes FollowSymLinks
     AllowOverride All
     Require all granted
 </Directory>
@@ -50,6 +51,12 @@ NameVirtualHost *:80
     Options Indexes FollowSymLinks
     AllowOverride All
     Require all granted
+</Directory>
+
+<Directory "/home/ec2-user/html">
+     allow from all
+     Options -Indexes
+     AllowOverride None
 </Directory>
 
 ' | sudo tee /etc/httpd/conf.d/subdomains.conf

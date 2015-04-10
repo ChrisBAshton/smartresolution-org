@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # delete smartresolution.org
-cd /var/www
+cd /home/ec2-user
 sudo rm -rf html
 
 # get the latest version

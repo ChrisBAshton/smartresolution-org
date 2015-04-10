@@ -2,8 +2,8 @@
 
 # delete smartresolution.org
 cd /var/www
-sudo rm -f html
-sudo rm -f html-demo
+sudo rm -rf html
+sudo rm -rf html-demo
 
 cd /home/ec2-user
 sudo rm -rf html

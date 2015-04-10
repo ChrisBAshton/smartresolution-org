@@ -15,6 +15,7 @@ mv smartresolution-master/ html-demo
 cd html-demo
 
 function fix_permissions {
+    ls
     # sudo chown -R root:www /var/www
     # sudo chmod 2775 /var/www
     # find /var/www -type d -print0      | sudo xargs -0 chmod 2775

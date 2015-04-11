@@ -3,8 +3,8 @@
         {
             "key"         : "maritime_collision",
             "title"       : "Maritime Collision",
-            "description" : "Custom dispute type: Maritime Collision",
-            "location"    : "/downloads/maritime_collision.zip",
+            "description" : "Adds the 'Maritime Collision' custom dispute type to help in automated dispute resolution. The encoded business logic is based on the Convention for the Unification of Certain Rules of Law with respect to Collisions between Vessels.",
+            "location"    : "http://smartresolution.org/downloads/maritime_collision.zip",
             "version"     : "0.1.0",
             "price"       : "0"
         },
@@ -28,7 +28,7 @@
             "key"         : "test",
             "title"       : "Test Module",
             "description" : "This module is used only in testing the SmartResolution module functionality and should not be included in the production environment.",
-            "location"    : "/downloads/test.zip",
+            "location"    : "http://smartresolution.org/downloads/test.zip",
             "version"     : "0.1.0",
             "price"       : "0"
         }

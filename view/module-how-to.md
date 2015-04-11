@@ -91,7 +91,7 @@ get_multiple('my_table.*');
  */
 ```
 
-More work needs to be done on this in the future, as this only happens the use-cases required by the SmartResolution-developed maritime collision module. In time, we will expand the functions in charge of database interaction.
+More work needs to be done on this in the future, as this only happens to be the use-cases required by the SmartResolution-developed maritime collision module. In time, we will expand the functions in charge of database interaction.
 
 ### Other functions
 Another exception to the function parameter convention is the miscellaneous collection of other functions used to interact with the core platform.

@@ -1,0 +1,77 @@
+<h1>Featured Modules</h1>
+
+<div class="row">
+    <?php
+    foreach($modules['featured'] as $module) :
+        $columns = 12 / count($modules['featured']);
+    ?>
+
+        <div class="col-sm-<?php echo $columns; ?>">
+            <h3>
+                <?php echo $module['title']; ?>
+            </h3>
+
+            <?php echoPriceAndVersion($module); ?>
+
+            <div class="col-sm-8">
+                <p>
+                    <?php echo $module['description']; ?>
+                </p>
+            </div>
+            <div class="col-sm-4 text-center">
+                <?php makeButton($module); ?>
+            </div>
+        </div>
+
+    <?php endforeach; ?>
+</div>
+
+<h1>Other Modules</h1>
+
+<?php
+foreach($modules['others'] as $module) :
+?>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <?php makeButton($module); ?>
+        </div>
+
+        <div class="col-sm-9">
+            <h3>
+                <?php echo $module['title']; ?>
+            </h3>
+
+            <?php echoPriceAndVersion($module); ?>
+
+            <p>
+                <?php echo $module['description']; ?>
+            </p>
+        </div>
+    </div>
+
+<?php endforeach; ?>
+
+<?php
+function makeButton($module) {
+    $linkText = $module['price'] === "0" ? 'Download Module' : 'Buy Module ($' . $module['price'] . ')';
+    $linkText = isset($module['location']) ? $linkText : 'Coming soon';
+?>
+    <a
+        class="btn btn-lg btn-primary"
+        href="<?php echo isset($module['location']) ? $module['location'] : '#'; ?>"
+        <?php if (!isset($module['location'])) echo 'disabled="disabled"'; ?>
+    >
+        <?php echo $linkText; ?>
+    </a>
+<?php
+}
+?>
+
+<?php
+function echoPriceAndVersion($module) {
+?>
+    <em><strong><?php echo $module['price'] === "0" ? 'Free' : '£' . $module['price']; ?></strong>, Version <?php echo $module['version']; ?></em>
+<?php
+}
+?>

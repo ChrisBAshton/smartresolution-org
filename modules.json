@@ -1,0 +1,36 @@
+{
+    "featured": [
+        {
+            "key"         : "maritime_collision",
+            "title"       : "Maritime Collision",
+            "description" : "Custom dispute type: Maritime Collision",
+            "location"    : "/downloads/maritime_collision.zip",
+            "version"     : "0.1.0",
+            "price"       : "0"
+        },
+        {
+            "key"         : "divorce",
+            "title"       : "Divorce",
+            "description" : "Adds the 'Divorce' custom dispute type. Coming soon.",
+            "version"     : "0.0.0",
+            "price"       : "49.99"
+        }
+    ],
+    "others": [
+        {
+            "key"         : "contract_breach",
+            "title"       : "Breach of Contract",
+            "description" : "Adds the 'Breach of Contract' custom dispute type. Coming soon.",
+            "version"     : "0.0.0",
+            "price"       : "129.99"
+        },
+        {
+            "key"         : "test",
+            "title"       : "Test Module",
+            "description" : "This module is used only in testing the SmartResolution module functionality and should not be included in the production environment.",
+            "location"    : "/downloads/test.zip",
+            "version"     : "0.1.0",
+            "price"       : "0"
+        }
+    ]
+}

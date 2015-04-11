@@ -31,7 +31,17 @@ $routes = array(
     },
 
     'GET /marketplace' => function($f3, $params) {
-        renderMarkdown(__DIR__ . '/view/marketplace.md');
+        $modulesFeed = file_get_contents(__DIR__ . '/modules.json');
+        $modulesJson = json_decode($modulesFeed, true);
+
+        $f3->set('modules', $modulesJson);
+        $f3->set('content', 'marketplace.html');
+        echo View::instance()->render('layout.html');
+    },
+
+    'GET /marketplace/feed' => function($f3, $params) {
+        $modulesFeed = file_get_contents(__DIR__ . '/modules.json');
+        echo $modulesFeed;
     },
 
     // this method should be called from a Git WebHook whenever master is updated.

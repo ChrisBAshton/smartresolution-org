@@ -1,3 +1,5 @@
+Did something with http://serverfault.com/a/632628
+
 # Amazon Web Services
 This readme provides instructions on how to deploy SmartResolution to AWS.
 

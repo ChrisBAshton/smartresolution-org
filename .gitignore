@@ -1,6 +1,5 @@
 .DS_Store
 vendor/
 docs/
-downloads/
 README--private.md
 SmartResolutionkeypair.pem

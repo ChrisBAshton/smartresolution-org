@@ -30,6 +30,15 @@ $routes = array(
         renderMarkdown(__DIR__ . '/view/download.md');
     },
 
+    'GET /module-how-to' => function($f3, $params) {
+        renderMarkdown(__DIR__ . '/view/module-how-to.md');
+    },
+
+    'GET /documentation' => function($f3, $params) {
+        $f3->set('content', 'documentation.html');
+        echo View::instance()->render('layout.html');
+    },
+
     'GET /marketplace' => function($f3, $params) {
         $modulesFeed = file_get_contents(__DIR__ . '/modules.json');
         $modulesJson = json_decode($modulesFeed, true);

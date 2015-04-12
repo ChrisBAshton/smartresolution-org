@@ -41,9 +41,6 @@ rm Gemfile.lock
 rm composer.lock
 rm webapp/modules/config.json
 
-# initialise empty database
-sqlite3 data/production.db < data/db.sql
-
 cd /home/ec2-user/html/
 
 # zip, then remove tmp directory

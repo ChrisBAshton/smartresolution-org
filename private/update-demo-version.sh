@@ -27,8 +27,11 @@ php composer.phar install
 # make project dependencies available to path
 export PATH=./vendor/bin:$PATH
 
-# run our install script
-sudo php deploy/install.php
+# create our database
+sqlite3 data/production.db < data/db.sql
+
+# populate with demo values
+php data/fixtures/seed.php production
 
 # also need to give our database permissions (@TODO - 777 is probably a bad idea)
 sudo chown -R apache:apache /home/ec2-user/html-demo

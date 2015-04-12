@@ -30,8 +30,8 @@ phpdoc -d /home/ec2-user/html/smartresolution/webapp/core/api/ -t /home/ec2-user
 # delete any directories we don't need
 cd smartresolution
 rm -rf features
-rm -rf modules
 rm -rf test
+rm -rf webapp/modules/test
 rm -rf vendor # we needed this just now for the phpdoc stuff, but this amounts to MB of stuff!
 
 # likewise, delete any files we don't need
@@ -39,6 +39,7 @@ rm README.md
 rm Gemfile
 rm Gemfile.lock
 rm composer.lock
+rm webapp/modules/config.json
 
 # initialise empty database
 sqlite3 data/production.db < data/db.sql

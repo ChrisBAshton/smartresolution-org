@@ -1,15 +1,5 @@
 #!/bin/bash
 
-function fix_permissions {
-    ls
-    # sudo chown -R root:www /var/www
-    # sudo chmod 2775 /var/www
-    # find /var/www -type d -print0      | sudo xargs -0 chmod 2775
-    # find /var/www -type f -print0      | sudo xargs -0 chmod 0664
-    # # but we want smartresolution-org scripts to be executable
-    # find /var/www -name "*.sh" -print0 | sudo xargs -0 chmod u+x
-}
-
 cd /home/ec2-user
 
 # remove old version of SmartResolution if we've done this before
@@ -28,8 +18,6 @@ cd html-demo
 sudo yum remove httpd* php* -y
 sudo yum install httpd24 php54 php54-pdo php54-mysqlnd -y
 
-fix_permissions
-
 ## install composer
 curl -sS https://getcomposer.org/installer | php
 
@@ -42,9 +30,8 @@ export PATH=./vendor/bin:$PATH
 # run our install script
 sudo php deploy/install.php
 
-fix_permissions # ...again
-
 # also need to give our database permissions (@TODO - 777 is probably a bad idea)
-sudo chown -R ec2-user /home/ec2-user/html-demo/data/
+sudo chown -R apache:apache /home/ec2-user/html-demo
 chmod 777 data
 chmod 777 data/production.db
+chmod 777 webapp/modules/

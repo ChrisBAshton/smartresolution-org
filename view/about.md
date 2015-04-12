@@ -1,12 +1,10 @@
-# Online Dispute Resolution for Maritime Collisions
-This repository contains the codebase for my Major Project (i.e. dissertation) at Aberystwyth University, and is currently a work in progress.
+# About SmartResolution
+SmartResolution was born out of a dissertation project by [Chris Ashton](http://twitter.com/ChrisBAshton), in conjunction with Aberystwyth University. The motivation for building an ODR platform was as follows.
 
-## Overview
+When it comes to resolving disputes, many people are increasingly turning to online dispute resolution (ODR) platforms as an alternative to taking the case to court, settling disputes more quickly, conveniently, and at a lower cost. These platforms already exist; they allow lawyers to open disputes on behalf of their clients, upload documents and type content in a structured manner, and hopefully reach an amicable resolution. However, there is no business logic that helps influence the outcome of a dispute. Resolution is a manual process performed by the lawyers.
 
-When it comes to resolving disputes, many people are increasingly turning to online dispute resolution (ODS) platforms as an alternative to taking the case to court, settling disputes more quickly, conveniently, and at a lower cost.
+SmartResolution introduces that business logic in an abstract way by way of modules, so that a module containing the business logic for a specific area of law can be plugged into the system. Modules can ask relevant, structured questions, interpret the answers by both parties and play out a "court simulation" indicating the outcome of the case should the dispute be taken to court.
 
-These platforms already exist; they allow lawyers to open disputes on behalf of their clients, upload documents and type content in a structured manner, and hopefully reach an amicable resolution. However, there is no business logic that helps influence the outcome of a dispute. Resolution is a manual process performed by the lawyers.
+In order to develop this modular ODR framework, the SmartResolution platform had to be built from scratch, since all existing ODR platforms were proprietary. Over the course of the dissertation, the functionality and robustness of the core SmartResolution platform became the main focus and the original idea for the maritime collision module had to be scaled back. The result is an enterprise-level ODR platform capable of supporting all manner of modules, bundled with semi-advanced prototype of a maritime collision module.
 
-Online Dispute Resolution for Maritime Collisions will attempt to introduce that business logic in an abstract way so that a module containing maritime law business logic can be plugged into the system. It will ask relevant, structured questions, interpret the answers by both parties and play out a ”court simulation” indicating the outcome of the case should the dispute be taken to court. It may also retrieve similar historic cases which can be fed into the simulation.
-
-Please see my [Outline Project Specification](http://ashton.codes/blog/outline-project-specification/) for more details. For (almost) daily updates, read my [Dissertation Diary](http://ashton.codes/blog/category/dissertation/).
+For more of a background to the dissertation, please read the [Outline Project Specification](http://ashton.codes/blog/outline-project-specification/), or for regular updates, read Chris' [Dissertation Diary](http://ashton.codes/blog/category/dissertation/).

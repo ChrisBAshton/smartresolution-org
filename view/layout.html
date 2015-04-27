@@ -2,41 +2,48 @@
 <html lang="en">
 	<head>
 		<meta charset="<?php echo $ENCODING; ?>" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title>SmartResolution</title>
 		<base href="<?php echo $SCHEME.'://'.$HOST.':'.$PORT.$BASE.'/'; ?>" />
 
 		<link rel="stylesheet" href="/view/css/bootstrap.css">
+		<link rel="stylesheet" href="/view/css/slicknav.min.css">
 		<link rel="stylesheet" href="/view/css/style.css">
 		<link rel="shortcut icon" href="/view/css/favicon.ico">
 	</head>
 	<body>
-		<div id="wrapper">
-			<div id="content">
-				<header class="container">
-				    <div class="row">
-				        <div class="col-sm-12 text-right">
-				            <a href="/" style="float: left"><img class="logo" src="view/images/logo.png"></a>
-				            <a href="/about">About</a> |
-				            <a href="/workflow">How does SmartResolution work?</a> |
-				            <a href="/documentation">Documentation &amp; Guides</a> |
-				            <a href="/marketplace">Marketplace</a> |
-				            <a href="/download">Download</a>
-				        </div>
-				    </div>
-				</header>
+		<header class="container">
+		    <div class="row">
+		        <div class="col-sm-12 text-right">
+		            <a href="/" style="float: left"><img alt="SmartResolution Home" class="logo" src="view/images/logo.png"></a>
+		            <ul id="menu">
+			            <li><a href="/about">About</a></li>
+			            <li><a href="/workflow">How does SmartResolution work?</a></li>
+			            <li><a href="/documentation">Documentation &amp; Guides</a></li>
+			            <li><a href="/marketplace">Marketplace</a></li>
+			            <li><a href="/download">Download</a></li>
+			        </ul>
+		        </div>
+		    </div>
+		</header>
 
-				<div class="container">
-					<?php echo $this->render(Base::instance()->get('content')); ?>
-				</div>
-			</div>
-			<footer>
-			    <p>
-			    	SmartResolution is proudly powered by the <a href="http://fatfreeframework.com/"><?php echo $PACKAGE; ?></a> (v<?php echo $VERSION; ?>) and is licensed under the terms of the GPLv3. <a href="https://github.com/ChrisBAshton/smartresolution">View the project on GitHub</a>.
-				</p>
-			    <p class="stats">
-			    	<code><?php echo Base::instance()->format('Page rendered in {0} msecs / Memory usage {1} Kibytes',round(1e3*(microtime(TRUE)-$TIME),2),round(memory_get_usage(TRUE)/1e3,1)); ?></code>
-			    </p>
-			</footer>
+		<div class="container">
+			<?php echo $this->render(Base::instance()->get('content')); ?>
 		</div>
+		<footer>
+		    <p>
+		    	SmartResolution is proudly powered by the <a href="http://fatfreeframework.com/"><?php echo $PACKAGE; ?></a> (v<?php echo $VERSION; ?>) and is licensed under the terms of the GPLv3. <a href="https://github.com/ChrisBAshton/smartresolution">View the project on GitHub</a>.
+			</p>
+		    <p class="stats">
+		    	<code><?php echo Base::instance()->format('Page rendered in {0} msecs / Memory usage {1} Kibytes',round(1e3*(microtime(TRUE)-$TIME),2),round(memory_get_usage(TRUE)/1e3,1)); ?></code>
+		    </p>
+		    <script src="/view/js/jquery.min.js"></script>
+		    <script src="/view/js/jquery.slicknav.min.js"></script>
+		    <script>
+				$(function(){
+					$('#menu').slicknav();
+				});
+			</script>
+		</footer>
 	</body>
 </html>

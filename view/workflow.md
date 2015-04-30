@@ -4,7 +4,7 @@ Online Dispute Resolution is aimed at lawyers (hereafter known as Agents), repre
 
 ## Roles in the system
 
-![Roles in the system](/view/images/roles.jpg)
+![Roles in the system](/view/images/roles.png)
 
 From left to right, we have:
 
@@ -26,7 +26,7 @@ Before a dispute can be opened on SmartResolution, both Agents must be registere
 
 ### Assigning the dispute to the relevant parties
 
-![Creating a dispute](/view/images/dispute_creation.jpg)
+![Creating a dispute](/view/images/dispute_creation.png)
 
 * Law Firm A creates a dispute, assigning it to Agent A.
 * Agent A fills in their summary for the dispute and opens the dispute against Law Firm B.
@@ -35,7 +35,7 @@ Before a dispute can be opened on SmartResolution, both Agents must be registere
 
 ### Negotiating a lifespan
 
-![Negotiating lifespan](/view/images/lifespan.jpg)
+![Negotiating lifespan](/view/images/lifespan.png)
 
 The agents need to agree on a start and end time for the dispute. A dispute can last for hours, weeks or months, depending on the preferences of the agents involved.
 
@@ -43,7 +43,7 @@ A lifespan can be re-negotiated at any point in the dispute process.
 
 ### The dispute begins
 
-![Dispute](/view/images/dispute.jpg)
+![Dispute](/view/images/dispute.png)
 
 With a lifespan negotiated and a dispute fully assigned, the agents are now able to communicate through the SmartResolution chat facility and upload documents as evidence.
 
@@ -51,7 +51,7 @@ With a lifespan negotiated and a dispute fully assigned, the agents are now able
 
 Sometimes, disputes may not be solved without the aid of an independent mediator. SmartResolution supports Mediation Centres and Mediators: at any point in an active dispute, either agent can propose mediation.
 
-![Proposing mediation](/view/images/mediation_creation.jpg)
+![Proposing mediation](/view/images/mediation_creation.png)
 
 * An agent proposes to use Mediation Centre 'MC' to mediate the dispute.
 * The other agent accepts. 'MC' is notified that they are now the Mediation Centre of the dispute.
@@ -60,7 +60,7 @@ Sometimes, disputes may not be solved without the aid of an independent mediator
 * An agent proposes to use Mediator M to mediate the dispute.
 * The other agent agrees. The dispute is now in mediation.
 
-![Mediation in action](/view/images/mediation.jpg)
+![Mediation in action](/view/images/mediation.png)
 
 With the dispute in mediation, all communication is done through the mediator, unless the mediator proposes "Round-Table Communication" and both agents accept. In this case, a three-person chat is unlocked. At any time, either agent can revoke Round-Table Communication.
 

@@ -10,8 +10,6 @@ First of all, [download](/download) SmartResolution and unzip the archive.
 
 All of the commands in the rest of this README are relative to the root of the repository. Therefore, when you've downloaded the repo, make sure you `cd smartresolution` to go into the top level of the repository before running any of the following commands.
 
-I've made a handy one-line installer script which installs all dependencies and creates and populates the database. You should run that script OR the manual installation - not both.
-
 ### Manual installation
 
 ```bash

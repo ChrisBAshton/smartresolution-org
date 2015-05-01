@@ -28,7 +28,7 @@ The module definition contains a series of event subscriptions and other setup f
 ```php
 on('event_name', 'function_to_call', 'priority');
 
-// route is at the dispute level by default, i.e. http://example.com/disputes/1337/custom-route
+// route is at the dispute level, i.e. http://example.com/disputes/1337/custom-route
 route('/custom-route', 'SomeModule->customRouteFunction', 'priority');
 
 // top level route is at the top level, i.e. http://example.com/module-test
@@ -44,8 +44,13 @@ Almost every function follows a three-parameter structure: event name, handler a
 * handler - can be a string representing a global or class function (e.g. `helloWorld` or `MyClass->helloWord`), or an anonymous function (i.e. `function () { // do something }`).
 * priority - either a string ('high', 'medium', 'low') or an integer between 1-100 (where the higher the number, the higher the priority). This parameter is optional and dictates in what order your handler should be called. For example, if handler A has a medium priority and handler B has a high priority, handler B will be executed before handler A when the event happens.
 
+### Dispute-dependent and dispute-independent
+In the example above, `route` is a dispute-dependent function and `top_level_route` is a dispute-independent function. The former is only applicable within disputes whereas the latter is applicable site-wide. Special functions such as `dashboard_add_item` can be dispute-dependent or dispute-independent depending on the context in which they are called.
+
+All of this is marked up in the [SmartResolution module API](/module-docs/index.html).
+
 ### Database interaction
-The exception to the above convention is the collection of database interaction functions.
+SmartResolution comes with a collection of useful database interaction functions.
 
 You can define a table like so:
 
@@ -94,7 +99,7 @@ get_multiple('my_table.*');
 More work needs to be done on this in the future, as this only happens to be the use-cases required by the SmartResolution-developed maritime collision module. In time, we will expand the functions in charge of database interaction.
 
 ### Other functions
-Another exception to the function parameter convention is the miscellaneous collection of other functions used to interact with the core platform.
+SmartResolution has a number of additional miscellaneous functions used to interact with the core platform.
 
 ```php
 get_login_id(); // returns the ID of the current user, e.g. 14.
@@ -107,11 +112,24 @@ dashboard_add_item(array(
 ));
 ```
 
-## @TODO - coming soon - a full list of events that can be hooked into
-
 ## Module API
+Check out the [SmartResolution module API](/module-docs/index.html) for a full list of functions your module can use.
 
-Check out the [SmartResolution module API](/module-docs/index.html) for a full list of functions and events your module can hook into.
+### Events
+The module API is still in its infancy, so there aren't many events you can hook into with the `on` function yet. This is the list so far:
+
+* `homescreen_dashboard` - dispute-independent - the core platform is rendering the homescreen dashboard. You can hook into this event to add your own dashboard items.
+* `dispute_dashboard` - dispute-dependent - the core platform is rendering the dispute dashboard. You can hook into this event to add your own dashboard items.
+
+In the future, it is hoped that there will be many more events which enable hooking into the following behaviours:
+
+* dispute created
+* lifespan proposed
+* agent assigned
+* mediator assigned
+* message sent
+* evidence uploaded
+* ...and so on.
 
 ## Submitting to SmartResolution
 

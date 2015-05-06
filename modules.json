@@ -5,7 +5,7 @@
             "title"       : "Maritime Collision",
             "description" : "Adds the 'Maritime Collision' custom dispute type to help in automated dispute resolution. The encoded business logic is based on the Convention for the Unification of Certain Rules of Law with respect to Collisions between Vessels.",
             "location"    : "http://smartresolution.org/downloads/maritime_collision.zip",
-            "version"     : "0.1.1",
+            "version"     : "0.1.2",
             "price"       : "0"
         },
         {

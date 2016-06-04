@@ -48,6 +48,41 @@ You should now be able to run the one-script install:
 
 When the script has finished, it automatically starts the server. You should be able to go to the provided IP address and see SmartResolution working.
 
+NOTE: you may need to do this (to give Apache permission to follow symlinks):
+
+```
+# give Apache permission to follow Symlinks
+chmod o+x /home/ec2-user/html
+sudo chmod o+x /home/ec2-user/html
+sudo chmod o+x /home/ec2-user/html-demo
+
+# fix permissions
+cd /home/ec2-user/html/
+sudo chown -R ec2-user .
+```
+
+NOTE: if you're running SmartResolution on a small server, e.g. an EC2 Nano instance (which only has 512Mb of memory) you'll want to set up some swap space otherwise Composer will crash:
+
+```
+# stop any running server, keep memory usage low
+sudo service httpd stop
+
+# create and enable the swapfile
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+ls -lh /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo swapon -s
+
+# now we can run Composer
+php composer.phar install
+sudo php composer.phar install
+
+# and restart the server!
+sudo service httpd start
+```
+
 ### Updating the SmartResolution.org website
 
 @TODO! Essentially, just copy what we've done above. But would be nice if there was a script to do this for us, and we could trigger it with a Git Webhook.
